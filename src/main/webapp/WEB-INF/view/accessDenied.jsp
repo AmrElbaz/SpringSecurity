@@ -8,9 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Custom Access Denied Page</title>
 </head>
 <body>
-$END$
+
+<h2>Access Denied - you are not authorized to access this resource.</h2>
+
+<hr>
+
+<a href="${pageContext.request.contextPath}/">Back To Home Page</a>
+
 </body>
 </html>

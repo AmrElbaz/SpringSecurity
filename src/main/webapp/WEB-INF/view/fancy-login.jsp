@@ -13,9 +13,7 @@
 	<!-- Reference Bootstrap files -->
 	<link rel="stylesheet"
 		 href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	
 	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
@@ -36,7 +34,7 @@
 				<div style="padding-top: 30px" class="panel-body">
 
 					<!-- Login Form -->
-					<form:form action="${pageContext.request.contextPath}/authenticateTheUser" 
+					<form action="${pageContext.request.contextPath}/authenticateTheUser"
 							   method="POST" class="form-horizontal">
 
 					    <!-- Place for messages: error, alert etc ... -->
@@ -53,12 +51,14 @@
 									</div>
 								
 								</c:if>
-																	
-									<!--		            
-									<div class="alert alert-success col-xs-offset-1 col-xs-10">
-										You have been logged out.
-									</div>
-								    -->
+
+									<c:if test="${param.logout != null}">
+
+										<div class="alert alert-success col-xs-offset-1 col-xs-10">
+											You have been logged out.
+										</div>
+
+									</c:if>
 
 					            </div>
 					        </div>
@@ -84,8 +84,12 @@
 								<button type="submit" class="btn btn-success">Login</button>
 							</div>
 						</div>
-
-					</form:form>
+						<!-- I'm manually adding tokens ... Bro! -->
+						<input type="hidden"
+							   name="${_csrf.parameterName}"
+							   value="${_csrf.token}" />
+<%--					</form:form> disabling sptring form:form to add manually CSRF--%>
+					</form>
 
 				</div>
 

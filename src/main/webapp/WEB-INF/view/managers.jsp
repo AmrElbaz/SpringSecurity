@@ -8,9 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Managers Page</title>
 </head>
 <body>
-$END$
+    <p>
+        This is Only For Managers
+    </p>
+
+<hr>
+
+<a href="${pageContext.request.contextPath}/">Back To Home Page</a>
 </body>
 </html>
